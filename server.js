@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    
+    // 🔹 your existing static file server
     let filePath = path.join(
         __dirname,
         'public',
