@@ -4,13 +4,11 @@ const path = require('path');
 const mime = require('mime-types');
 const multer = require('multer');
 
-// uploads folder
 const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
 }
 
-// allow ONLY html files
 const upload = multer({
     dest: uploadDir,
     fileFilter: (req, file, cb) => {
@@ -24,7 +22,6 @@ const upload = multer({
 
 const server = http.createServer((req, res) => {
 
-    // 🔹 upload route
     if (req.method === 'POST' && req.url === '/upload') {
         upload(req, res, (err) => {
             if (err) {
@@ -38,7 +35,6 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // 🔹 your existing static file server
     let filePath = path.join(
         __dirname,
         'public',
