@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "mime": "^4.1.0",
-    "mime-types": "^3.0.2"
+    "mime-types": "^3.0.2",
+    "multer": "^2.0.2"
   }
 }
